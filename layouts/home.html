@@ -1,0 +1,15 @@
+{{ define "body" }}
+    {{ .Content }}
+    {{ range (.Site.GetPage "/projects").Pages }}
+        <article>
+            {{ with (or (.Resources.GetMatch (print .Params.name ".png"))
+                        (.Resources.GetMatch (print .Params.name ".gif"))
+                        (resources.GetMatch "no_image.png")) }}
+                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+            {{ end }}
+            <p>{{ .Content }}</p>
+            <p>{{ T "programming_language" (len .Params.languages) }}: {{ delimit .Params.languages ", " }}</p>
+            <p><a href="{{ .Params.repo_url }}">{{ T "source_link" }}</a></p>
+        </article>
+    {{end}}
+{{ end }}

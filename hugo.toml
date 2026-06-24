@@ -1,0 +1,12 @@
+baseURL = 'https://example.org/'
+title = 'My New Hugo Project'
+
+defaultContentLanguage = 'en'
+
+[languages.en]
+label = 'English'
+weight = 1
+
+[languages.ru]
+label = 'Русский'
+weight = 2

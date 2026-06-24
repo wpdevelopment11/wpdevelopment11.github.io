@@ -1,0 +1,5 @@
+source_link = "Исходный код на GitHub"
+
+[programming_language]
+one = 'Язык'
+other = 'Языки'
