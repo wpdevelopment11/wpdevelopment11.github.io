@@ -1,4 +1,36 @@
 body {
-    max-width: 800px;
+    max-width: 640px; /* width of a project image */
     margin: 0 auto;
+}
+
+article {
+    margin: 20px 0;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+article > h2 {
+    font-size: 20px;
+}
+
+article > * {
+    padding: 0 10px;
+}
+
+article img {
+    display: block;
+    padding: 0;
+    border-radius: 10px 10px 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.repo-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repo-info > p {
+    margin: 0;
 }
