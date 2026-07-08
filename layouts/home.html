@@ -1,5 +1,24 @@
 {{ define "body" }}
     {{ .Content }}
+    <h2 id="tutorials">{{ T "tutorials" }}</h2>
+    {{ if eq .Language.Locale "ru" }}
+        <p>Все технические руководства ниже доступны только на английском языке. Используйте переводчик в браузере в случае необходимости.</p>
+    {{ end }}
+    <table>
+        <tr>
+            <th>{{ T "tutor_title" }}</th>
+            <th></th>
+            <th>{{ T "last_updated" }}</th>
+        </tr>
+        {{ range ((.Resources.GetMatch "tutorials.toml") | transform.Unmarshal).tutorials }}
+            {{ $updated := time.AsTime .last_updated | time.Format ":date_long"}}
+            <tr>
+                <td><a href="{{ .url }}">{{ .title }}</a></td>
+                <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" }}</a></td>{{ end }}</td>
+                <td>{{ $updated }}</td>
+            </tr>
+        {{ end }}
+    </table>
     <h2 id="programming_projects">{{ T "programming_projects" }}</h2>
     <p>{{ T "ai_disclaimer" }}</p>
     {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
