@@ -10,3 +10,45 @@ weight = 1
 [languages.ru]
 label = 'Русский'
 weight = 2
+
+[[languages.en.menus.main]]
+name = 'Tutorials'
+pageRef = '#tutorials'
+weight = 10
+[[languages.en.menus.main]]
+name = 'Programming projects'
+pageRef = '#programming_projects'
+weight = 20
+[[languages.en.menus.main]]
+name = 'Contributions'
+pageRef = '#contributions'
+weight = 30
+[[languages.en.menus.main]]
+name = 'Training'
+pageRef = '#training'
+weight = 40
+[[languages.en.menus.main]]
+name = 'Contacts'
+pageRef = '#contacts'
+weight = 50
+
+[[languages.ru.menus.main]]
+name = 'Технические руководства'
+pageRef = '#tutorials'
+weight = 10
+[[languages.ru.menus.main]]
+name = 'Программирование'
+pageRef = '#programming_projects'
+weight = 20
+[[languages.ru.menus.main]]
+name = 'Вклад в другие проекты'
+pageRef = '#contributions'
+weight = 30
+[[languages.ru.menus.main]]
+name = 'Тренировки'
+pageRef = '#training'
+weight = 40
+[[languages.ru.menus.main]]
+name = 'Контакты'
+pageRef = '#contacts'
+weight = 50

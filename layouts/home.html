@@ -1,4 +1,9 @@
 {{ define "body" }}
+    <nav>
+        {{ range site.Menus.main }}
+            <a href="{{ .PageRef }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
     {{ .Content }}
     <h2 id="tutorials">{{ T "tutorials" }}</h2>
     {{ if eq .Language.Locale "ru" }}
