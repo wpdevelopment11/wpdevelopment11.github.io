@@ -1,17 +1,12 @@
 {{ define "body" }}
     {{ .Content }}
-    {{ range (.Site.GetPage "/projects").Pages }}
-        <article>
-            {{ with (or (.Resources.GetMatch (print .Params.name ".png"))
-                        (.Resources.GetMatch (print .Params.name ".gif"))
-                        (resources.GetMatch "no_image.png")) }}
-                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-            {{ end }}
-            {{ .Content }}
-            <div class="repo-info">
-                <p>{{ T "programming_language" (len .Params.languages) }}: {{ delimit .Params.languages ", " }}</p>
-                <p><a href="{{ .Params.repo_url }}">{{ T "source_link" }}</a></p>
-            </div>
-        </article>
+    <h2 id="programming_projects">{{ T "programming_projects" }}</h2>
+    <p>{{ T "ai_disclaimer" }}</p>
+    {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
+        {{ partial "project.html" . }}
+    {{end}}
+    <h2 id="contributions">{{ T "contributions" }}</h2>
+    {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
+        {{ partial "project.html" . }}
     {{end}}
 {{ end }}

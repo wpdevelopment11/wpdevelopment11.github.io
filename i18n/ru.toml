@@ -1,4 +1,12 @@
-source_link = "Исходный код на GitHub"
+source_link = "Код на GitHub"
+watch_demo = 'Видео работы'
+tutorials = 'Технические руководства'
+programming_projects = 'Проекты по программированию'
+contributions = 'Проекты в которые я внес вклад'
+tutor_title = 'Название'
+last_updated = 'Последнее обновление'
+alternative_link = 'Альтернативная ссылка'
+ai_disclaimer = 'Все мои проекты созданы без использования больших языковых моделей и генеративного искусственного интеллекта, если прямо не указано обратное.'
 
 [programming_language]
 one = 'Язык'

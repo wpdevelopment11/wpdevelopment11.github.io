@@ -1,4 +1,12 @@
 source_link = 'Source on GitHub'
+watch_demo = 'Watch a demo'
+tutorials = 'Tutorials'
+programming_projects = 'Programming projects'
+contributions = 'Projects I contributed to'
+tutor_title = 'Title'
+last_updated = 'Last updated'
+alternative_link = 'Alternative link'
+ai_disclaimer = 'All my projects are created without the use of large language models and generative AI, unless explicitly stated otherwise.'
 
 [programming_language]
 one = 'Language'

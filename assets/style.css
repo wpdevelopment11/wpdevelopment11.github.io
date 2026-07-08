@@ -8,6 +8,7 @@ article {
     background: #f1f1f1;
     border-radius: 10px;
     padding-bottom: 10px;
+    position: relative;
 }
 
 article > h2 {
@@ -26,11 +27,43 @@ article img {
     height: auto;
 }
 
+h2,
+p {
+    text-align: justify;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
 .repo-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .repo-info > p {
     margin: 0;
+}
+
+.button-with-icon {
+    background-color: #d5d5d5;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.button-with-icon > * {
+    vertical-align: middle;
+}
+
+.button-with-icon > a {
+    color: black;
+}
+
+.button-with-icon.demo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
 }

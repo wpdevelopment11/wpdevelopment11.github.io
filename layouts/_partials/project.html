@@ -1,0 +1,23 @@
+<article>
+    {{ with (or (.Resources.GetMatch (print .Params.name ".png"))
+                (.Resources.GetMatch (print .Params.name ".gif"))
+                (resources.GetMatch "no_image.png")) }}
+        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+    {{ end }}
+    {{ .Content }}
+    <div class="repo-info">
+        <p>{{ T "programming_language" (len .Params.languages) }}: {{ delimit .Params.languages ", " }}</p>
+        {{ with .Params.repo_url }}
+            <div class="button-with-icon">
+                {{ (resources.GetMatch "github.svg").Content | safeHTML }}
+                <a href="{{ . }}">{{ T "source_link" }}</a>
+            </div>
+        {{ end }}
+    </div>
+    {{ with .Resources.GetMatch "demo.mp4" }}
+        <div class="button-with-icon demo">
+            {{ (resources.GetMatch "demo.svg").Content | safeHTML }}
+            <a href="{{ .RelPermalink }}">{{ T "watch_demo" }}</a>
+        </div>
+    {{ end }}
+</article>
