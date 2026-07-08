@@ -67,3 +67,19 @@ ol {
     right: 10px;
     z-index: 10;
 }
+
+#language {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#language > label {
+    line-height: 0;
+}
+
+#language-switcher {
+    padding: 5px;
+    margin-left: 5px;
+}
