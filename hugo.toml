@@ -11,6 +11,11 @@ weight = 1
 label = 'Русский'
 weight = 2
 
+[params.accounts]
+email = 'mailto:wpdevelopment11@gmail.com'
+github = 'https://github.com/wpdevelopment11'
+telegram = ''
+
 [[languages.en.menus.main]]
 name = 'Tutorials'
 pageRef = '#tutorials'

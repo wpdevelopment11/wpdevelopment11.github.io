@@ -21,6 +21,16 @@
             <h1>{{ T "header_title" }}</h1>
             <p>{{ T "header_description" }}</p>
         </div>
+        <div class="accounts">
+            {{ range $name := slice "GitHub" "Email" }}
+                {{ $account := lower $name }}
+                {{ $link := index $.Site.Params.accounts $account }}
+                <a class="account" href="{{ $link }}" title="{{ T (print $account "_link_title") }}">
+                    {{ (resources.GetMatch (print $account ".svg")).Content | safeHTML }}
+                    {{ $name }}
+                </a>
+            {{ end }}
+        </div>
     </header>
     <main>
         {{ partial "header.html" (dict "id" "tutorials" "page" .) }}
