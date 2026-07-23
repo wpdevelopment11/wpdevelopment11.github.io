@@ -1,36 +1,60 @@
 {{ define "body" }}
-    <nav>
-        {{ range site.Menus.main }}
-            <a href="{{ .PageRef }}">{{ .Name }}</a>
+    <header>
+        <div class="topbar">
+            <nav>
+                {{ range site.Menus.main }}
+                    <a href="{{ .PageRef }}">{{ .Name | safeHTML }}</a>
+                {{ end }}
+            </nav>
+            {{ with .Rotate "language" }}
+                <div id="language">
+                    <label for="language-switcher">{{ (resources.GetMatch "language.svg").Content | safeHTML }}</label>
+                    <select id="language-switcher">
+                        {{ range . }}
+                            <option value="{{ .RelPermalink }}" {{ if eq .Language $.Language }}selected{{ end }}>{{ .Language.Label }}</option>
+                        {{ end }}
+                    </select>
+                </div>
+            {{ end }}
+        </div>
+        <div class="title">
+            <h1>{{ T "header_title" }}</h1>
+            <p>{{ T "header_description" }}</p>
+        </div>
+    </header>
+    <main>
+        {{ partial "header.html" (dict "id" "tutorials" "page" .) }}
+        {{ if eq .Language.Locale "ru" }}
+            {{ with (T "tutorials_lang_notice") }}
+                <p>{{ . }}</p>
+            {{ end }}
         {{ end }}
-    </nav>
-    {{ .Content }}
-    <h2 id="tutorials">{{ T "tutorials" }}</h2>
-    {{ if eq .Language.Locale "ru" }}
-        <p>Все технические руководства ниже доступны только на английском языке. Используйте переводчик в браузере в случае необходимости.</p>
-    {{ end }}
-    <table>
-        <tr>
-            <th>{{ T "tutor_title" }}</th>
-            <th></th>
-            <th>{{ T "last_updated" }}</th>
-        </tr>
-        {{ range ((.Resources.GetMatch "tutorials.toml") | transform.Unmarshal).tutorials }}
-            {{ $updated := time.AsTime .last_updated | time.Format ":date_long"}}
+        <table class="tutorials">
             <tr>
-                <td><a href="{{ .url }}">{{ .title }}</a></td>
-                <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" }}</a></td>{{ end }}</td>
-                <td>{{ $updated }}</td>
+                <th>{{ T "last_updated" }}</th>
+                <th></th>
+                <th></th>
             </tr>
-        {{ end }}
-    </table>
-    <h2 id="programming_projects">{{ T "programming_projects" }}</h2>
-    <p>{{ T "ai_disclaimer" }}</p>
-    {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
-        {{ partial "project.html" . }}
-    {{end}}
-    <h2 id="contributions">{{ T "contributions" }}</h2>
-    {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
-        {{ partial "project.html" . }}
-    {{end}}
+            {{ range ((.Resources.GetMatch "tutorials.toml") | transform.Unmarshal).tutorials }}
+                {{ $updated := time.AsTime .last_updated | time.Format ":date_long"}}
+                <tr>
+                    <td>{{ $updated }}</td>
+                    <td><a href="{{ .url }}">{{ .title }}</a></td>
+                    <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" | safeHTML }}</a></td>{{ end }}</td>
+                </tr>
+            {{ end }}
+        </table>
+        {{ partial "header.html" (dict "id" "programming_projects" "page" .) }}
+        <div class="project-info">
+            {{ (resources.GetMatch "exclamation.svg").Content | safeHTML }}
+            <p>{{ T "ai_disclaimer" }}</p>
+        </div>
+        {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
+            {{ partial "project.html" . }}
+        {{end}}
+        {{ partial "header.html" (dict "id" "contributions" "page" .) }}
+        {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
+            {{ partial "project.html" . }}
+        {{end}}
+    </main>
 {{ end }}

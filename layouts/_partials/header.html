@@ -1,0 +1,5 @@
+{{- $id := .id }}
+{{- $title := T $id }}
+{{- $link := print .page.RelPermalink "#" $id }}
+
+<h2 id="{{ $id }}">{{- $title }} <a href="{{ $link }}">§</a></h2>

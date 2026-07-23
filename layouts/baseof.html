@@ -7,16 +7,6 @@
     <title>{{ .Title }}</title>
 </head>
 <body>
-    {{ with .Rotate "language" }}
-        <div id="language">
-            <label for="language-switcher">{{ (resources.GetMatch "language.svg").Content | safeHTML }}</label>
-            <select id="language-switcher">
-                {{ range . }}
-                    <option value="{{ .RelPermalink }}" {{ if eq .Language $.Language }}selected{{ end }}>{{ .Language.Label }}</option>
-                {{ end }}
-            </select>
-        </div>
-    {{ end }}
     {{ block "body" . }}{{ end }}
     <script src="{{ (resources.GetMatch "script.js").RelPermalink }}"></script>
 </body>
