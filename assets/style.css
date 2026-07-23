@@ -1,6 +1,23 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Serif Regular'), local('NotoSerif-Regular'), url('/fonts/noto-serif-v33-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Serif Bold'), local('NotoSerif-Bold'), url('/fonts/noto-serif-v33-cyrillic_cyrillic-ext_latin_latin-ext-700.woff2') format('woff2');
+}
+
 body {
     max-width: 640px; /* width of a project image */
     margin: 0 auto;
+    font-family: 'Noto Serif', serif;
 }
 
 article {
