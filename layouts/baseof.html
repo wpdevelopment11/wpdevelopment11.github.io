@@ -17,12 +17,7 @@
             </select>
         </div>
     {{ end }}
-    <script>
-        document.getElementById("language-switcher").addEventListener("change", (e) => {
-            console.log("here");
-            window.location.href = e.target.value
-        });
-    </script>
     {{ block "body" . }}{{ end }}
+    <script src="{{ (resources.GetMatch "script.js").RelPermalink }}"></script>
 </body>
 </html>
