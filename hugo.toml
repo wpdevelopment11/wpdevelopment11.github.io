@@ -3,6 +3,8 @@ title = 'My New Hugo Project'
 
 defaultContentLanguage = 'en'
 
+disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
+
 [languages.en]
 label = 'English'
 weight = 1
