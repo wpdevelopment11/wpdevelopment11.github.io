@@ -66,5 +66,9 @@
         {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
             {{ partial "project.html" . }}
         {{end}}
+        {{ partial "header.html" (dict "id" "training" "page" .) }}
+        {{ range (.Site.GetPage "/training").Pages }}
+            {{ partial "training_session.html" . }}
+        {{end}}
     </main>
 {{ end }}
