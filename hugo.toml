@@ -33,8 +33,8 @@ name = 'Training'
 pageRef = '#training'
 weight = 40
 [[languages.en.menus.main]]
-name = 'Contacts'
-pageRef = '#contacts'
+name = 'Contact'
+pageRef = '#contact'
 weight = 50
 
 [[languages.ru.menus.main]]
@@ -55,5 +55,5 @@ pageRef = '#training'
 weight = 40
 [[languages.ru.menus.main]]
 name = 'Контакты'
-pageRef = '#contacts'
+pageRef = '#contact'
 weight = 50

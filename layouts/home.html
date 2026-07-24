@@ -70,5 +70,7 @@
         {{ range (.Site.GetPage "/training").Pages }}
             {{ partial "training_session.html" . }}
         {{end}}
+        {{ partial "header.html" (dict "id" "contact" "page" .) }}
+        <div class="contact">{{ (.Site.GetPage "/contact").Content }}</div>
     </main>
 {{ end }}
