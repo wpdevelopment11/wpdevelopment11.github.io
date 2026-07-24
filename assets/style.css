@@ -15,21 +15,44 @@
 }
 
 body {
-    max-width: 640px; /* width of a project image */
+    max-width: 840px;
     margin: 0 auto;
+    padding: 0 10px;
     font-family: 'Noto Serif', serif;
 }
 
 article {
-    margin: 20px 0;
+    margin: 20px auto;
     background: #f1f1f1;
     border-radius: 10px;
     padding-bottom: 10px;
     position: relative;
+    max-width: 640px; /* width of a project image */
 }
 
-article > h2 {
-    font-size: 20px;
+a {
+    color: #000;
+}
+
+article a,
+.contact a {
+    color: #0040a5;
+}
+
+.project-info {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.project-info svg,
+.repo-info svg {
+    flex-shrink: 0;
+}
+
+.project-info p {
+    margin-left: 10px;
 }
 
 article > * {
@@ -62,20 +85,25 @@ ol {
 
 .repo-info > p {
     margin: 0;
+    margin-right: 15px;
 }
 
 .button-with-icon {
     background-color: #d5d5d5;
-    padding: 5px;
+    padding: 5px 7px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.button-with-icon > * {
-    vertical-align: middle;
+.button-with-icon svg {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 5px;
 }
 
 .button-with-icon > a {
-    color: black;
+    color: #000;
 }
 
 .button-with-icon.demo {
@@ -89,7 +117,6 @@ ol {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-top: 10px;
 }
 
 #language > label {
@@ -99,4 +126,254 @@ ol {
 #language-switcher {
     padding: 5px;
     margin-left: 5px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.title > h1,
+.title > p {
+    text-align: center;
+    margin: 0
+}
+
+.title > p {
+    color: #000;
+    padding: 5px;
+}
+
+.title > h1 {
+    margin: 20px 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+th,
+td {
+    padding: 5px 10px;
+}
+
+.tutorials tr + tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.accounts {
+    display: flex;
+    justify-content: center;
+}
+
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+.account > svg {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 5px;
+}
+
+.accounts > * {
+    margin-right: 20px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.topbar > nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+}
+
+.topbar > nav > a {
+    margin-right: 7px;
+    padding-right: 7px;
+    border-right: 1px solid;
+}
+
+.topbar > nav > a:last-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+main > h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+h2 > a {
+    color: #9e9e9e;
+    text-decoration: none;
+}
+
+h2 > a:hover {
+    color: #000;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.session {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.session > .image-preview {
+    flex: 1;
+}
+
+.session > .session-content {
+    flex: 3;
+}
+
+.session > .image-preview > img {
+    border-radius: 10px 0 0 10px;
+}
+
+.session-content {
+    margin-top: 10px;
+}
+
+.session-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.session-date > svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+}
+
+.session-date {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+article.session {
+    max-width: 100%;
+    padding-bottom: 0;
+}
+
+.session-title a {
+    margin-right: 10px;
+}
+
+.session-title a,
+article > h2 {
+    font-size: 1.25rem;
+}
+
+main > h2 {
+    font-size: 1.5rem;
+}
+
+article.session > .image-preview {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.repo-info > p {
+    text-align: left;
+}
+
+.repo-info > .button-with-icon {
+    flex-shrink: 0;
+}
+
+@media (max-width: 420px) {
+    .topbar > nav > a {
+        border-right: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .topbar > nav {
+        flex-direction: column;
+    }
+
+    .button-with-icon.demo {
+        font-size: 0.8rem;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .title {
+        padding-top: 10px;
+    }
+
+    .tutorials th:nth-of-type(3),
+    .tutorials td:nth-of-type(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    article + article {
+        margin-top: 40px;
+    }
+
+    .session-title {
+        flex-direction: column-reverse;
+    }
+
+    .session-date {
+        margin-bottom: 5px;
+    }
+
+    .session > .image-preview {
+        flex: 2;
+    }
+
+    .session > .session-content {
+        flex: 3;
+    }
+
+    .session-title a,
+    article > h2 {
+        font-size: 1rem;
+    }
+
+    main > h2 {
+        font-size: 1.25rem;
+    }
 }
