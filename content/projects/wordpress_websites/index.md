@@ -4,7 +4,7 @@ title = "WordPress Websites"
 description = "The list of things I did using WordPress."
 date = "2018-12-01"
 languages = ["CSS", "HTML", "JavaScript", "PHP"]
-weight = 20
+weight = 30
 +++
 
 ## WordPress Websites

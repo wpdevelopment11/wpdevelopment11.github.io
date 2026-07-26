@@ -4,7 +4,7 @@ title = "Сайты на WordPress"
 description = "Список задач которые я решил с помощью WordPress."
 date = "2018-12-01"
 languages = ["CSS", "HTML", "JavaScript", "PHP"]
-weight = 20
+weight = 30
 +++
 
 ## Сайты на WordPress

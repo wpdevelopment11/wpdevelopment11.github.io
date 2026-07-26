@@ -4,7 +4,7 @@ title = "My website"
 description = "How I created a website for my projects."
 date = "2026-06-21"
 languages = ["CSS", "Go templates", "HTML", "Markdown"]
-weight = 30
+weight = 20
 +++
 
 ## My website
