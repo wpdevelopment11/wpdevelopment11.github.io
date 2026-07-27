@@ -51,7 +51,7 @@
                     <tr>
                         <td>{{ $updated }}</td>
                         <td><a href="{{ .url }}">{{ .title }}</a></td>
-                        <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" | safeHTML }}</a></td>{{ end }}</td>
+                        <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" | safeHTML }}</a>{{ end }}</td>
                     </tr>
                 {{ end }}
             </table>
