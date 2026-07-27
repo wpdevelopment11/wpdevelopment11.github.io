@@ -7,7 +7,7 @@ date = "2025-05-05T12:28:09Z"
 languages = ["Python"]
 +++
 
-## Extract links from Markdown files
+### Extract links from Markdown files
 
 Find all links and images in Markdown files. Output them one per line for further processing.
 

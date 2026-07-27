@@ -7,7 +7,6 @@ date = "2025-04-11T09:50:32Z"
 languages = ["Dockerfile", "Python"]
 +++
 
-## Autoinsert the language into Markdown fenced code blocks 
+### Autoinsert the language into Markdown fenced code blocks
 
 Modify Markdown fenced code blocks to contain the language name by detecting it from the block contents.
-

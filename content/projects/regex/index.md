@@ -7,7 +7,6 @@ date = "2025-07-04T08:27:27Z"
 languages = ["Python"]
 +++
 
-## Simple regex implementation in Python
+### Simple regex implementation in Python
 
 A simple regular expression matcher supporting a subset of commonly used features.
-

@@ -7,7 +7,7 @@ languages = ["CSS", "Go templates", "HTML", "Markdown"]
 weight = 20
 +++
 
-## My website
+### My website
 
 I created my multilingual website using the Hugo static site generator.
 

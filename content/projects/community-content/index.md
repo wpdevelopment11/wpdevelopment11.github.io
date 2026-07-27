@@ -8,7 +8,7 @@ languages = ["Bash", "Markdown", "YAML"]
 contributor = true
 +++
 
-## Hetzner Community Tutorials
+### Hetzner Community Tutorials
 
 I have contributed heavily to the [Hetzner Community Tutorials] project.
 This project provides an opportunity for people to share their technical tutorials

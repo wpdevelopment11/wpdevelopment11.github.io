@@ -8,6 +8,6 @@ languages = ["CSS", "HTML", "Nunjucks", "TypeScript"]
 weight = 15
 +++
 
-## Image Resizer
+### Image Resizer
 
 A GUI app written using NW.js that wraps GraphicsMagick and allows you to resize images and optimize them in bulk.
