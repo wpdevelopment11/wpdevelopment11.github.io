@@ -7,12 +7,10 @@
     {{ end }}
     <div class="session-content">
         <div class="session-title">
-            <a href="{{ $video.RelPermalink }}">{{ $.Params.title }}</a>
+            <h3><a href="{{ $video.RelPermalink }}">{{ $.Params.title }}</a></h3>
             {{ $date := time.AsTime .Params.date | time.Format ":date_long"}}
             <div class="session-date">{{ (resources.GetMatch "date.svg").Content | safeHTML }} {{ $date }}</div>
         </div>
-        <div class="session-descr">
-            {{ .Content }}
-        </div>
+        {{ .Content }}
     </div>
 </article>

@@ -33,45 +33,57 @@
         </div>
     </header>
     <main>
-        {{ partial "header.html" (dict "id" "tutorials" "page" .) }}
-        {{ if eq .Language.Locale "ru" }}
-            {{ with (T "tutorials_lang_notice") }}
-                <p>{{ . }}</p>
+        <section>
+            {{ partial "header.html" (dict "id" "tutorials" "page" .) }}
+            {{ if eq .Language.Locale "ru" }}
+                {{ with (T "tutorials_lang_notice") }}
+                    <p>{{ . }}</p>
+                {{ end }}
             {{ end }}
-        {{ end }}
-        <table class="tutorials">
-            <tr>
-                <th>{{ T "last_updated" }}</th>
-                <th></th>
-                <th></th>
-            </tr>
-            {{ range ((.Resources.GetMatch "tutorials.toml") | transform.Unmarshal).tutorials }}
-                {{ $updated := time.AsTime .last_updated | time.Format ":date_long"}}
+            <table class="tutorials">
                 <tr>
-                    <td>{{ $updated }}</td>
-                    <td><a href="{{ .url }}">{{ .title }}</a></td>
-                    <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" | safeHTML }}</a></td>{{ end }}</td>
+                    <th>{{ T "last_updated" }}</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            {{ end }}
-        </table>
-        {{ partial "header.html" (dict "id" "programming_projects" "page" .) }}
-        <div class="project-info">
-            {{ (resources.GetMatch "exclamation.svg").Content | safeHTML }}
-            <p>{{ T "ai_disclaimer" }}</p>
-        </div>
-        {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
-            {{ partial "project.html" . }}
-        {{end}}
-        {{ partial "header.html" (dict "id" "contributions" "page" .) }}
-        {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
-            {{ partial "project.html" . }}
-        {{end}}
-        {{ partial "header.html" (dict "id" "training" "page" .) }}
-        {{ range (.Site.GetPage "/training").Pages }}
-            {{ partial "training_session.html" . }}
-        {{end}}
-        {{ partial "header.html" (dict "id" "contact" "page" .) }}
-        <div class="contact">{{ (.Site.GetPage "/contact").Content }}</div>
+                {{ range ((.Resources.GetMatch "tutorials.toml") | transform.Unmarshal).tutorials }}
+                    {{ $updated := time.AsTime .last_updated | time.Format ":date_long"}}
+                    <tr>
+                        <td>{{ $updated }}</td>
+                        <td><a href="{{ .url }}">{{ .title }}</a></td>
+                        <td>{{ if .source }}<a href="{{ .source }}">{{ T "alternative_link" | safeHTML }}</a></td>{{ end }}</td>
+                    </tr>
+                {{ end }}
+            </table>
+        </section>
+        <section>
+            {{ partial "header.html" (dict "id" "programming_projects" "page" .) }}
+            <div class="project-info">
+                {{ (resources.GetMatch "exclamation.svg").Content | safeHTML }}
+                <p>{{ T "ai_disclaimer" }}</p>
+            </div>
+            {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" nil) }}
+                {{ partial "project.html" . }}
+            {{end}}
+        </section>
+        <section>
+            {{ partial "header.html" (dict "id" "contributions" "page" .) }}
+            {{ range (where (.Site.GetPage "/projects").Pages "Params.contributor" true) }}
+                {{ partial "project.html" . }}
+            {{end}}
+        </section>
+        <section>
+            {{ partial "header.html" (dict "id" "training" "page" .) }}
+            {{ range (.Site.GetPage "/training").Pages }}
+                {{ partial "training_session.html" . }}
+            {{end}}
+        </section>
+        <section class="contact">
+            {{ partial "header.html" (dict "id" "contact" "page" .) }}
+            {{ (.Site.GetPage "/contact").Content }}
+        </section>
     </main>
-    <footer>Copyright (c) 2026 wpdevelopment11</footer>
+    <footer>
+        <p>Copyright (c) 2026 wpdevelopment11</p>
+    </footer>
 {{ end }}

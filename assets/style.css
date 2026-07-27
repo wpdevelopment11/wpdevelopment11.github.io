@@ -35,7 +35,7 @@ a {
 }
 
 article a,
-.contact a {
+.contact p a {
     color: #0040a5;
 }
 
@@ -68,6 +68,7 @@ article img {
 }
 
 h2,
+h3,
 p {
     text-align: justify;
 }
@@ -150,7 +151,8 @@ ol {
     margin: 20px 0;
 }
 
-h2 {
+h2,
+h3 {
     margin-bottom: 0;
 }
 
@@ -220,7 +222,7 @@ td {
     border: none;
 }
 
-main > h2 {
+section > h2 {
     border-bottom: 2px solid #000;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -236,10 +238,12 @@ h2 > a:hover {
     color: #000;
 }
 
-footer {
-    text-align: center;
+body > footer {
     margin-top: 50px;
-    margin-bottom: 15px;
+}
+
+body > footer > p {
+    text-align: center;
 }
 
 .session {
@@ -262,6 +266,10 @@ footer {
 
 .session-content {
     margin-top: 10px;
+}
+
+.session-content h3 {
+    margin-top: 0;
 }
 
 .session-title {
@@ -287,16 +295,18 @@ article.session {
     padding-bottom: 0;
 }
 
-.session-title a {
-    margin-right: 10px;
+.session-title > h3 {
+    margin-right: 15px;
+    font-weight: normal;
+    text-align: left;
 }
 
-.session-title a,
-article > h2 {
+.session-title h3,
+article > h3 {
     font-size: 1.25rem;
 }
 
-main > h2 {
+section > h2 {
     font-size: 1.5rem;
 }
 
@@ -316,6 +326,37 @@ article.session > .image-preview {
 
 .repo-info > .button-with-icon {
     flex-shrink: 0;
+}
+
+@media (max-width: 550px) {
+    article + article {
+        margin-top: 40px;
+    }
+
+    .session-title {
+        flex-direction: column-reverse;
+    }
+
+    .session-date {
+        margin-bottom: 5px;
+    }
+
+    .session > .image-preview {
+        flex: 2;
+    }
+
+    .session > .session-content {
+        flex: 3;
+    }
+
+    .session-title h3,
+    article > h3 {
+        font-size: 1rem;
+    }
+
+    section > h2 {
+        font-size: 1.25rem;
+    }
 }
 
 @media (max-width: 420px) {
@@ -344,36 +385,5 @@ article.session > .image-preview {
     .tutorials th:nth-of-type(3),
     .tutorials td:nth-of-type(3) {
         display: none;
-    }
-}
-
-@media (max-width: 550px) {
-    article + article {
-        margin-top: 40px;
-    }
-
-    .session-title {
-        flex-direction: column-reverse;
-    }
-
-    .session-date {
-        margin-bottom: 5px;
-    }
-
-    .session > .image-preview {
-        flex: 2;
-    }
-
-    .session > .session-content {
-        flex: 3;
-    }
-
-    .session-title a,
-    article > h2 {
-        font-size: 1rem;
-    }
-
-    main > h2 {
-        font-size: 1.25rem;
     }
 }

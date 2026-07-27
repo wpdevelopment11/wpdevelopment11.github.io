@@ -5,7 +5,7 @@
         <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
     {{ end }}
     {{ .Content }}
-    <div class="repo-info">
+    <footer class="repo-info">
         <p>{{ T "programming_language" (len .Params.languages) }}: {{ delimit .Params.languages ", " }}</p>
         {{ with .Params.repo_url }}
             <div class="button-with-icon">
@@ -13,7 +13,7 @@
                 <a href="{{ . }}">{{ T "source_link" }}</a>
             </div>
         {{ end }}
-    </div>
+    </footer>
     {{ with .Resources.GetMatch "demo.mp4" }}
         <div class="button-with-icon demo">
             {{ (resources.GetMatch "demo.svg").Content | safeHTML }}
