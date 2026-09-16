@@ -1,13 +1,13 @@
 [[tutorials]]
+title = "Настройка Xray-core VLESS прокси для доступа к заблокированным сайтам и приложениям"
+url = "https://github.com/wpdevelopment11/xray-tutorial"
+last_updated = 2026-09-11
+
+[[tutorials]]
 title = "Запуск Windows-игр в Linux с помощью Wine и DXVK в контейнере"
 url = "https://community.hetzner.com/tutorials/running-windows-games-on-linux-using-wine-and-dxvk-in-a-sandbox"
 source = "https://github.com/wpdevelopment11/community-content/blob/master/tutorials/running-windows-games-on-linux-using-wine-and-dxvk-in-a-sandbox/01.en.md"
 last_updated = 2026-04-14
-
-[[tutorials]]
-title = "Настройка Xray-core VLESS прокси для доступа к заблокированным сайтам и приложениям"
-url = "https://github.com/wpdevelopment11/xray-tutorial"
-last_updated = 2026-04-08
 
 [[tutorials]]
 title = "Обфускация WireGuard с помощью Wstunnel"
