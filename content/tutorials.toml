@@ -1,4 +1,9 @@
 [[tutorials]]
+title = "How to invoke GoldenDict translation using a global shortcut on KDE Plasma 6 Wayland"
+url = "https://github.com/xiaoyifang/goldendict-ng/discussions/3110"
+last_updated = 2026-10-14
+
+[[tutorials]]
 title = "Set up an Xray-core VLESS proxy to access blocked websites and apps"
 url = "https://github.com/wpdevelopment11/xray-tutorial"
 last_updated = 2026-09-11

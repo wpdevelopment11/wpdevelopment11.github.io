@@ -1,4 +1,9 @@
 [[tutorials]]
+title = "Как передать текст в GoldenDict с помощью глобального сочетания клавиш в KDE Plasma 6 Wayland"
+url = "https://github.com/xiaoyifang/goldendict-ng/discussions/3110"
+last_updated = 2026-10-14
+
+[[tutorials]]
 title = "Настройка Xray-core VLESS прокси для доступа к заблокированным сайтам и приложениям"
 url = "https://github.com/wpdevelopment11/xray-tutorial"
 last_updated = 2026-09-11
